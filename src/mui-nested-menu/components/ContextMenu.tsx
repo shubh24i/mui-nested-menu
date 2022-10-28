@@ -78,7 +78,7 @@ const ContextMenu = forwardRef<HTMLDivElement, ContextMenuProps>(
           open={!!menuPosition}
           onClose={() => setMenuPosition(null)}
           anchorReference="anchorPosition"
-          anchorPosition={menuPosition}
+          anchorPosition={menuPosition!=='undefined'?menuPosition:{{top:0,left:0}}}
         >
           {menuContents}
         </Menu>
